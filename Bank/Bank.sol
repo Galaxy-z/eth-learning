@@ -16,7 +16,7 @@ contract Bank is IBank {
         deposit();
     }
 
-    function deposit() public payable override {
+    function deposit() public payable override virtual  {
         require(msg.value > 0, "Please deposit more than 0 ether");
         balances[msg.sender] += msg.value;
         updateTop(msg.sender);

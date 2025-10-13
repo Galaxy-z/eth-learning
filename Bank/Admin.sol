@@ -7,7 +7,7 @@ import "./IBank.sol";
 contract Admin {
     address internal owner;
 
-    constructor() {
+    constructor () {
         owner = msg.sender;
     }
 
@@ -15,4 +15,11 @@ contract Admin {
         require(msg.sender == owner, "only owner can withdraw");
         bank.withdraw();
     }
+
+    receive() external payable { }
+
+    function deposite() public payable {
+
+    }
+
 }
